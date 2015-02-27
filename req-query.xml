@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VerejnyWebDotaz
+    xmlns="urn:cz:isvs:rzp:schemas:VerejnaCast:v1"
+    version="2.6">
+  <Kriteria>
+    <IdentifikacniCislo>75848899</IdentifikacniCislo>
+    <PlatnostZaznamu>0</PlatnostZaznamu>
+  </Kriteria>
+</VerejnyWebDotaz>
