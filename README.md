@@ -10,13 +10,13 @@ a.s.](http://www.i.cz) for the government.
 Fun facts is that an official name of the system is actually
 „*Živnostenský rejstřík*“ which is one of those bizzare moments when
 you just don’t get what the hell are doing those people paid by you.
-Not the mention there are four major systems operated by different
-branches of Czech government providing public information about
+Not to mention there are four major systems operated by different
+branches of the Czech government providing public information about
 business subjects in the country.
 
-There's a [documentation](http://www.rzp.cz/napoveda.html) to public
-API to RŽP. But it is only in Czech and there are more than 30 pages
-of XML Schema code in PDF which can't be just copied and pasted
+There is a [documentation](http://www.rzp.cz/napoveda.html) describing
+public API to RŽP. But it is only in Czech and there are more than 30
+pages of XML Schema code in PDF which can't be just copied and pasted
 elsewhere. So, here we are, fixing government's and major vendor's
 incomptency.
 
@@ -27,7 +27,7 @@ info](req-detail.xml). Finally, there are XML Schema sources which can
 help you validate [your requests](request.xsd) and [responses from the
 system](response.xsd).
 
-Your request can be validates with `xmllint` or similar tool, e.g.:
+Your request can be validated with `xmllint` or similar tool, e.g.:
 
 ```bash
 xmllint -schema request.xsd YOUR_XML_REQ
@@ -39,11 +39,11 @@ this repo covers only the version 2.6.
 
 ## License
 
-There's no license mentioned in documentation created by ICZ so it
-fallbacks to the Czech IP laws which means I am relativelly sure you
-and I can copy as we like for our own purposes. If anything, it is my
-fault for publishing these files here without asking ICZ first - you
-are safe unless you are publishing them too. But honestly, I think
+There is no license mentioned in the documentation created by ICZ so
+it falls back to the Czech IP laws which means I am relativelly sure
+you and I can copy as we like for our own purposes. If anything, it is
+my fault for publishing these files here without asking ICZ first -
+you are safe unless you are publishing them too. But honestly, I think
 this case is less restrictive. I will clear this issue later
 (hopefully).
 
