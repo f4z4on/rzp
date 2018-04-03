@@ -4,12 +4,12 @@
 (translated to English as the *Trade Licensing Register*). It is a
 partially public database of business subjects in the Czech Republic
 operated the [Ministry of Industry and Trade](http://www.mpo.cz). The
-system was originally developed by a public company [ICZ
-a.s.](http://www.i.cz) for the government.
+system was originally developed by [ICZ a.s.](http://www.i.cz) for the
+government.
 
-Fun facts is that an official name of the system is actually
+Fun fact is that an official name of the system is actually
 „*Živnostenský rejstřík*“ which is one of those bizzare moments when
-you just don’t get what the hell are doing those people paid by you.
+you just don’t get what the hell are those people paid by you doing.
 Not to mention there are four major systems operated by different
 branches of the Czech government providing public information about
 business subjects in the country.
@@ -42,9 +42,8 @@ this repo covers only the version 2.6.
 There is no license mentioned in the documentation created by ICZ so
 it falls back to the Czech IP laws which means I am relativelly sure
 you and I can copy as we like for our own purposes. If anything, it is
-my fault for publishing these files here without asking ICZ first -
-you are safe unless you are publishing them too. But honestly, I think
-this case is less restrictive. I will clear this issue later
-(hopefully).
+my fault for publishing these files here without asking ICZ first –
+you are safe unless you are publishing them too. I will clear this
+issue later (hopefully).
 
-You can use my code for whatever you like, I don't care.
+You can use this code for whatever you like, I don't care.
