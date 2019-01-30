@@ -4,7 +4,7 @@
     elementFormDefault="qualified"
     xmlns="urn:cz:isvs:rzp:schemas:VerejnaCast:v1"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    version="2.6">
+    version="2.8">
   <xs:element name="VerejnyWebOdpoved" type="TVerejnyWebOdpoved" />
   <xs:complexType name="TVerejnyWebOdpoved">
     <xs:sequence>
@@ -271,6 +271,7 @@
   <xs:complexType name="TZivnost">
     <xs:sequence>
       <xs:element name="Predmet" type="TPredmet" />
+      <xs:element name="Podminky" type="TPodminky" minOccurs="0" />
       <xs:element name="Obor" type="TObor" minOccurs="0" />
       <xs:element name="Prumysl" type="TPrumysl" minOccurs="0" />
       <xs:element name="Rozsah" type="TRozsah" minOccurs="0" />
@@ -294,6 +295,23 @@
       <xs:element name="Drive" type="TDrive" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
     <xs:attribute name="Popis" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="TPodminky">
+    <xs:sequence>
+      <xs:element name="VycetPodminek" type="TVycetPodminek" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Popis" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="TVycetPodminek">
+    <xs:sequence>
+      <xs:element name="Podminka" type="TPodminka" maxOccurs="unbounded"/>
+      <xs:element name="Platnost" type="TPlatnost" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TPodminka">
+    <xs:sequence>
+      <xs:element name="Hodnota" type="THodnota" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="TObor">
     <xs:sequence>
@@ -548,6 +566,17 @@
       <xs:element name="UkonceniProvozovani" type="TUkonceniProvozovani" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="TProvozovna">
+    <xs:sequence>
+      <xs:element name="OborNaProvozovne" type="TOborNaProvozovne" minOccurs="0" />
+      <xs:element name="NazevProvozovny" type="TNazevProvozovny" minOccurs="0" />
+      <xs:element name="UmisteniProvozovny" type="TUmisteniProvozovny" minOccurs="0" />
+      <xs:element name="ZmenaAdresy" type="TZmenaAdresy" minOccurs="0" />
+      <xs:element name="IdentifikacniCisloProvozovny" type="TIdentifikacniCisloProvozovny" minOccurs="0" />
+      <xs:element name="ZahajeniProvozovani" type="TZahajeniProvozovani" minOccurs="0" />
+      <xs:element name="UkonceniProvozovani" type="TUkonceniProvozovani" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="TOborNaProvozovne">
     <xs:simpleContent>
       <xs:extension base="xs:string">
@@ -665,14 +694,14 @@
   <xs:complexType name="TChyba">
     <xs:sequence>
       <!--
-          -1 pozadavek neobsahuje XML dokument pro namespace poplatny aplikaci
-          -2 chybne cislo verze
-          -3 chybna kombinace nebo hodnoty elementu a atributu v XML pozadavku
-          -4 nejednoznacna vyhledavaci kriteria
-          -5 podnikatel s pozadovanym ID nenalezen
-          -6 osoba s pozadovanym ID nenalezena
-          -7 nepovolena kombinace vyhledavacich kriterii
-          -8 pozadavek obsahuje xml element, ktery neodpovida definici rozhrani
+          -1  pozadavek neobsahuje XML dokument pro namespace poplatny aplikaci
+          -2  chybne cislo verze
+          -3  chybna kombinace nebo hodnoty elementu a atributu v XML pozadavku
+          -4  nejednoznacna vyhledavaci kriteria
+          -5  podnikatel s pozadovanym ID nenalezen
+          -6  osoba s pozadovanym ID nenalezena
+          -7  nepovolena kombinace vyhledavacich kriterii
+          -8  pozadavek obsahuje xml element, ktery neodpovida definici rozhrani
           -99 vnitrni chyba aplikace
       -->
       <xs:element name="KodChyby" type="xs:byte" />
@@ -745,8 +774,8 @@
   </xs:complexType>
   <xs:complexType name="TStatutarniOrganPravnickeOsobyDetail">
     <xs:sequence>
-      <xs:element name="ObchodniJmeno" type="TOsobaJmenoPrijmeni" />
-      <xs:element name="IdentifikacniCislo" type="TOsobaDatumNarozeni" minOccurs="0"/>
+      <xs:element name="ObchodniJmeno" type="TObchodniJmeno" />
+      <xs:element name="IdentifikacniCislo" type="TIdentifikacniCislo" minOccurs="0"/>
     </xs:sequence>
     <xs:attribute name="Popis" type="xs:string" use="required" />
   </xs:complexType>
@@ -819,19 +848,23 @@
   </xs:complexType>
   <xs:complexType name="TOsobaVeFunkci">
     <xs:sequence>
+      <xs:element name="OsobaPoradoveCislo" type="xs:unsignedShort" />
       <xs:element name="OsobaJmenoPrijmeni" type="TOsobaJmenoPrijmeni" />
       <xs:element name="VeFunkci" type="TVeFunkci" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="TZapsanaOsoba">
     <xs:sequence>
+      <xs:element name="OsobaPoradoveCislo" type="xs:unsignedShort" />
       <xs:element name="OsobaJmenoPrijmeni" type="TOsobaJmenoPrijmeni" />
+      <xs:element name="VeFunkci" type="TVeFunkci" />
       <xs:element name="Zapsano" type="TZapsano" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="TZapsanyStatutarniOrganPO">
     <xs:sequence>
       <xs:element name="ObchodniJmeno" type="TObchodniJmeno" />
+      <xs:element name="VeFunkci" type="TVeFunkci" />
       <xs:element name="Zapsano" type="TZapsano" minOccurs="0" />
       <xs:element name="StatutarniOrganClenZastupce" type="TStatutarniOrganClenZastupce" minOccurs="0" />
     </xs:sequence>
@@ -898,9 +931,14 @@
   </xs:complexType>
   <xs:complexType name="TZucastnenaOsobaDetail">
     <xs:sequence>
+      <xs:element name="OsobaPoradoveCislo" type="xs:unsignedShort" />
       <xs:element name="JmenoPrijmeni" type="TJmenoPrijmeni" />
       <xs:element name="DatumNarozeni" type="TDatumNarozeni" />
       <xs:element name="Obcanstvi" type="TObcanstvi" minOccurs="0"/>
+      <xs:element name="TitulPredJmenem" type="TTitulPredJmenem" minOccurs="0"/>
+      <xs:element name="Jmeno" type="TJmeno" />
+      <xs:element name="Prijmeni" type="TPrijmeni" />
+      <xs:element name="TitulZaJmenem" type="TTitulZaJmenem" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="TStatutarniOrganPoDetail">
@@ -925,6 +963,34 @@
     <xs:attribute name="Popis" type="xs:string" use="required" />
   </xs:complexType>
   <xs:complexType name="TObcanstvi">
+    <xs:sequence>
+      <xs:element name="Hodnota" type="THodnota" />
+      <xs:element name="PlatnostHodnoty" type="TPlatnostHodnoty" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Popis" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="TTitulPredJmenem">
+    <xs:sequence>
+      <xs:element name="Hodnota" type="THodnota" />
+      <xs:element name="PlatnostHodnoty" type="TPlatnostHodnoty" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Popis" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="TJmeno">
+    <xs:sequence>
+      <xs:element name="Hodnota" type="THodnota" />
+      <xs:element name="PlatnostHodnoty" type="TPlatnostHodnoty" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Popis" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="TPrijmeni">
+    <xs:sequence>
+      <xs:element name="Hodnota" type="THodnota" />
+      <xs:element name="PlatnostHodnoty" type="TPlatnostHodnoty" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="Popis" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="TTitulZaJmenem">
     <xs:sequence>
       <xs:element name="Hodnota" type="THodnota" />
       <xs:element name="PlatnostHodnoty" type="TPlatnostHodnoty" minOccurs="0" maxOccurs="unbounded" />

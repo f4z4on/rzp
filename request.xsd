@@ -4,7 +4,7 @@
     elementFormDefault="qualified"
     xmlns="urn:cz:isvs:rzp:schemas:VerejnaCast:v1"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    version="2.6">
+    version="2.8">
   <xs:element name="VerejnyWebDotaz" type="TVerejnyWebDotaz" />
   <xs:complexType name="TVerejnyWebDotaz">
     <xs:choice>
@@ -45,7 +45,7 @@
       </xs:choice>
       <!-- role subjektu -->
       <xs:element name="SubjektRole" type="SeznamRoliSubjektu" minOccurs="0"/>
-      <!-- pozadavek na platnost vyhledanych zaznamu (1 - jen platne/0 - vcetne neplatnych) -->
+      <!-- pozadavek na platnost vyhledanych zaznamu (1 - jen platne/ 0 - vcetne neplatnych) -->
       <xs:element name="PlatnostZaznamu" type="VyberovaPodminka" />
     </xs:sequence>
   </xs:complexType>
@@ -59,7 +59,7 @@
       <xs:element name="OsobaDatumNarozeni" type="xs:string" />
       <!-- role osoby -->
       <xs:element name="OsobaRole" type="SeznamRoliOsoby" minOccurs="0"/>
-      <!-- pozadavek na platnost vyhledanych zaznamu (1 - jen platne/0 - vcetne neplatnych) -->
+      <!-- pozadavek na platnost vyhledanych zaznamu (1 - jen platne/ 0 - vcetne neplatnych) -->
       <xs:element name="PlatnostZaznamu" type="VyberovaPodminka" />
     </xs:sequence>
   </xs:complexType>
@@ -67,14 +67,14 @@
     <xs:sequence>
       <xs:element name="OsobaID" type="xs:string" />
       <xs:element name="OsobaRole" type="SeznamRoliOsoby" minOccurs="0"/>
-      <!-- pozadavek na platnost vyhledanych zaznamu (1 - jen platne/0 - vcetne neplatnych) -->
+      <!-- pozadavek na platnost vyhledanych zaznamu (1 - jen platne/ 0 - vcetne neplatnych) -->
       <xs:element name="PlatnostZaznamu" type="VyberovaPodminka" />
     </xs:sequence>
   </xs:group>
   <xs:group name="GdetailStatutarnihoOrganuPravnickeOsoby">
     <xs:sequence>
       <xs:element name="StatutarniOrganPravnickeOsobyID" type="xs:string" />
-      <!-- pozadavek na platnost vyhledanych zaznamu (1 - jen platne/0 - vcetne neplatnych) -->
+      <!-- pozadavek na platnost vyhledanych zaznamu (1 - jen platne/ 0 - vcetne neplatnych) -->
       <xs:element name="PlatnostZaznamu" type="VyberovaPodminka" />
     </xs:sequence>
   </xs:group>
@@ -102,8 +102,8 @@
   </xs:complexType>
   <xs:simpleType id="VyberovaPodminka" name="VyberovaPodminka">
     <xs:restriction base="xs:int">
-      <xs:enumeration value="0"/>
-      <xs:enumeration value="1"/>
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType id="SeznamRoliOsoby" name="SeznamRoliOsoby">
