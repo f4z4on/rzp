@@ -1,10 +1,10 @@
 # RŽP
 
-[RŽP](http://www.rzp.cz) stands for “*Registr živnostenského podnikání*” (officially translated to English as the *Trade Licensing Register*). It is a partially public database of business entities in the Czech Republic operated by the [Ministry of Industry and Trade](http://www.mpo.cz). The system was originally developed by [ICZ a.s.](http://www.i.cz) for the government.
+[RŽP](https://www.rzp.cz) stands for “*Registr živnostenského podnikání*” (officially translated to English as the *Trade Licensing Register*). It is a partially public database of business entities in the Czech Republic operated by the [Ministry of Industry and Trade](http://www.mpo.cz). The system was originally developed by [ICZ a.s.](http://www.i.cz) for the government.
 
 Fun fact is that an official name of the system is actually “*Živnostenský rejstřík*” which is one of those bizarre moments when you just don’t get what the hell are those people paid by you doing. Not to mention there are four major systems operated by different branches of the Czech government providing public information about business entities in the country.
 
-There is a [documentation](http://www.rzp.cz/napoveda.html) describing public API to RŽP. But it is only in Czech and there are more than 30 pages of XML Schema code in PDF which can’t be just copied and pasted elsewhere. So, here we are, fixing government’s and major vendor’s incompetency.
+There is a [documentation](https://www.rzp.cz/verejne-udaje/napoveda/) describing public API to RŽP. But it is only in Czech and there are more than 30 pages of XML Schema code in PDF which can’t be just copied and pasted elsewhere. So, here we are, fixing government’s and major vendor’s incompetency.
 
 There’s a [simple HTML form](index.html) which serves as a way to submit XML requests (yeah, this is the API). There are example XML requests for [general query](req-query.xml) and [subject’s details info](req-detail.xml). Finally, there are XML Schema sources which can help you validate [your requests](request.xsd) and [responses from the system](response.xsd).
 
