@@ -1,8 +1,8 @@
 # RŽP
 
-[RŽP](http://www.rzp.cz) means “*Registr živnostenského podnikání*” (translated to English as the *Trade Licensing Register*). It is a partially public database of business subjects in the Czech Republic operated by the [Ministry of Industry and Trade](http://www.mpo.cz). The system was originally developed by [ICZ a.s.](http://www.i.cz) for the government.
+[RŽP](http://www.rzp.cz) stands for “*Registr živnostenského podnikání*” (officially translated to English as the *Trade Licensing Register*). It is a partially public database of business entities in the Czech Republic operated by the [Ministry of Industry and Trade](http://www.mpo.cz). The system was originally developed by [ICZ a.s.](http://www.i.cz) for the government.
 
-Fun fact is that an official name of the system is actually “*Živnostenský rejstřík*” which is one of those bizarre moments when you just don’t get what the hell are doing those people paid by you. Not to mention there are four major systems operated by different branches of the Czech government providing public information about business subjects in the country.
+Fun fact is that an official name of the system is actually “*Živnostenský rejstřík*” which is one of those bizarre moments when you just don’t get what the hell are those people paid by you doing. Not to mention there are four major systems operated by different branches of the Czech government providing public information about business entities in the country.
 
 There is a [documentation](http://www.rzp.cz/napoveda.html) describing public API to RŽP. But it is only in Czech and there are more than 30 pages of XML Schema code in PDF which can’t be just copied and pasted elsewhere. So, here we are, fixing government’s and major vendor’s incompetency.
 
@@ -14,7 +14,7 @@ Your request can be validated with `xmllint` or similar tool, for example:
 xmllint --schema request.xsd YOUR_XML_REQ
 ```
 
-The schemas are copied as-is from the official documentation. I will provide English comments later (hopefully). The API is versioned and this repo covers only the version 2.8—in use since 30 September 2017 and the only available version since 1 January 2018.
+The schemas are copied as-is from the official documentation. I will provide English comments later (hopefully). The API is versioned and this repo covers only the version 2.8 which is in use since 30 September 2017 and which is the only available version since 1 January 2018.
 
 ## License
 
