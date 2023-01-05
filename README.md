@@ -14,7 +14,7 @@ Your request can be validated with `xmllint` or similar tool, for example:
 xmllint --schema request.xsd YOUR_XML_REQ
 ```
 
-The schemas are copied as-is from the official documentation. I will provide English comments later (hopefully). The API is versioned and this repo covers only the version 2.8 which is in use since 30 September 2017 and which is the only available version since 1 January 2018.
+The schemas are copied as-is from the official documentation. I will provide English comments later (hopefully). The API is versioned and this repo covers only the version 2.8 which is in use since 30 September 2017 and which is the only available version since 1 January 2018. The API version 2.8 was changed without any notice on 1 January 2023 by enforcing HTTP over TLS (HTTPS).
 
 ## License
 
